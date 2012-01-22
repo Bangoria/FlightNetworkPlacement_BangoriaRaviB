@@ -1,0 +1,162 @@
+Solution of problem 1:
+
+
+  Problem takes string of random numbers as input and stores it in array named user_input. Than we takes each element from user_input and will store it in array named temp_storage if that is valid as per the pattern (Actually here pattern is- elements should be in descending order). Variable named previous_temp_int will store previous visited element. Value stored in this variable is used to check current element is as per pattern or not. If it is, we replace current element in previous_temp_int and fetch next elements from user_input.
+
+As soon as fetched element that doesn’t match with pattern, all elements from temp_storage will be pushed on to stack and then popped. For example, user_input={4,3,2,1,0,9,8,7,6,5}.  temp_storage will be = {4} in first execution of loop, {4,3} in second execution and  … {4,3,2,1,0} in fifth execution. As next element is 9, which is not matching with pattern, we push all elements of temp_storage onto stack in reverse order until it will not be empty. So, pattern is pushed like PUSH(0), PUSH(1), PUSH(2), PUSH(3), PUSH(4). Than we pop all elements of stack and print it until stack does not become empty. In our example, first POP() will return 4, next POP() will return 3 and so on. empty_stack() is a function that pop all elements from stack and print it on console. Output is like:
+
+ 4 3 2 1 0
+
+
+	After popping all elements from stack, we check whether any elements left in user_input. If yes, we will repeat same process again until all elements of user_input is examined. In our example, we restart with element which has value 9. We store it in temp_storage than take next element which is 8. 8 is matching with pattern and we store 8 in temp_storage. Than we take 7 which is also matching with pattern. We store all successive elements that are matching with pattern.
+
+If we found such element that is not valid as per pattern handled by PUSH - POP operation, we exit from loop and print that string is not valid. For that we have variable named valid, which can be true or false.
+ 
+	In our example, sequence of PUSH and POP can be shown as:
+PUSH(0), PUSH(1), PUSH(2), PUSH(3), PUSH(4)
+POP(), POP(), POP(), POP(), POP()
+PUSH(5), PUSH(6), PUSH(7), PUSH(8), PUSH(9)
+POP(), POP(), POP(), POP(), POP()
+
+	Final output of our previous example will be like:
+
+PATTERN:
+
+ 4 3 2 1 0
+ 9 8 7 6 5
+
+Valid Pattern
+
+ 
+
+
+
+	Some other examples are given below.
+
+Example 1:
+User pattern: 8764321654
+
+PATTERN:
+ 8 7 6
+ 4 3 2 1
+ 6 5 4
+
+Valid pattern
+ 
+Example 2:
+User pattern: 543278765
+
+PATTERN:
+ 5 4 3 2
+
+Not valid pattern
+
+
+Example 3:
+User pattern: 123456789
+
+PATTERN:
+
+Not valid pattern
+
+
+Example 4:
+User pattern: 432165a
+
+PATTERN:
+ 4 3 2 1
+
+ERROR : a is not valid digit. Press any key to exit.
+
+
+ 
+Solution of problem 2:
+
+
+	This program is divided into two parts, first is Initial Procedure and second is Algorithm Implementation. First part will do initial procedures like taking total number of kids, creating circular linked list, taking random number from user etc. Second part is actual logic of program which will execute and returns who is winner.
+
+	Each node in linked list will represent one kid. Variable total_kids is maximum number of kids in game. Identification number, given to each kid, will start from 0 and end to total_kids-1. User will input random number between 1 and total_kids-1. This will be stored in variable random_num.
+
+Algorithm of the program is shown below.
+
+list = last node of circular linked list;
+temp = list;
+take random num ‘n’ from user
+
+while(number of nodes in circular liked list >= 1)
+{
+	i=1;
+	while(i < n)
+	{
+		temp=temp->next;
+		i++;
+	}
+	delete_after(temp);
+}
+
+As shown in algorithm, we start with last node (which represent last child in real word). We increment count by one as we visit one node of list. So counting will start from first node of list (First kid in circle). As count become n-1, we stop and delete next node from list (Eliminate next kid from game). Than we check how many nodes remain in circular linked list. If it is one, it is winner, if not we repeat same procedure until there is only one node remain in list. Remaining node will be winner.
+ 
+Note that count of 0th node is 1, count of 1st node is 2 and…count of 7th node is 8.
+
+	Step by step procedure is shown below with example:
+	Let we have 8 kids and random number entered by user is 5.
+
+Initial state:
+       	temp       list
+
+
+
+
+
+Count will start with 0th node and counted till 4 (random_num-1). So, after counting, temp will point to node which has value 3. Its next node which has value 4 and count 5 will be deleted using function delete_after().  This is shown in next figure.
+
+
+Next state:
+	After deletion of node 4, we start counting with 5th node i.e. count 1 for 5th node, 2 for 6th node and soon.
+	temp
+
+
+
+
+
+
+
+Table given below shows eliminated nodes at each step.
+
+Total remaining nodes	Eliminated nodes
+8	
+7	4
+6	1
+5	7
+4	6
+3	3
+2	0
+1	5
+Output with snapshot of some example is shown below:
+
+Example 1
+Enter total number of kids : 8
+Enter random number between 1 to 7 : 5
+Winner : 2
+
+ 
+
+
+Example 2
+Enter total number of kids : 6
+Enter random number between 1 to 5 : 2
+
+Winner : 4
+
+
+Example 3
+Enter total number of kids : 1
+
+Winner : 1
+
+
+Example 4
+Enter total number of kids : 7
+Enter random number between 1 to 5 : 7
+ERROR Random number is not valid. Press any key to exit.
+
