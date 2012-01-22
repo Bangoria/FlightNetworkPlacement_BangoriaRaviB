@@ -23,7 +23,7 @@
 	achieved using PUSH - POP
 
 
-	<b>This code will work in Turbo C compiler. It will not work in gcc.</b>
+	This code will work in Turbo C compiler. It will not work in gcc.
 */
 #include<stdio.h>
 
