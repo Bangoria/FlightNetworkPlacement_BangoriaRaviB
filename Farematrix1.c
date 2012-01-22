@@ -33,7 +33,7 @@ enum validity{true, false} valid;
 
 struct stack
 {
-  int top;
+	int top;
 	int ele[MAX];
 }s;
 
