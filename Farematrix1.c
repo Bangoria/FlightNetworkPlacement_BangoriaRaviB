@@ -1,5 +1,29 @@
 /*
-  This code will work in Turbo C compiler. It will not work in gcc.
+	Program 1 : Write a program to simulate the push/pop functionality of a Stack. The requirements
+	are
+
+	a) It should be possible to PUSH numbers (0 - 9) on the stack
+	only in the proper sequence. Meaning, the allowed sequence is
+	PUSH 0, PUSH 1, PUSH 2, PUSH 3, PUSH 4, PUSH 5, PUSH
+	6, PUSH 7, PUSH 8, PUSH 9. It should not be possible to skip
+	numbers in between. PUSH 2, PUSH 4 is not allowed.
+
+	b) Given a random pattern of numbers, the program should be
+	able to validate if it is possible to generate the given pattern
+	using a number of PUSH - POP operations. For example: the
+	pattern 4 3 2 1 0 9 8 7 6 5 is achievable using the following
+	PUSH - POP sequence
+
+	PUSH 0, PUSH 1, PUSH 2, PUSH 3, PUSH 4, POP 4, POP 3,
+	POP 2, POP 1, POP 0, PUSH 5, PUSH 6, PUSH 7, PUSH 8,
+	PUSH 9, POP 9, POP 8, POP 7, POP 6, POP 5
+
+	The results from the POP commands can be printed on the
+	console to show the pattern. This is a valid pattern and can be
+	achieved using PUSH - POP
+
+
+	<b>This code will work in Turbo C compiler. It will not work in gcc.</b>
 */
 #include<stdio.h>
 
