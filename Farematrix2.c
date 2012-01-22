@@ -1,12 +1,26 @@
 /*
-  This code will work in Turbo C compiler. It will not work in gcc.
+	Program 2 : Kids are playing a game of Elimination. The rules of the game are
+
+	a) Suppose there are M kids. They stand in a circle and pick a
+	random number N which is less than M.
+
+	b) They start counting from 1 to N and the kid at position N is
+	eliminated. They resume counting from position N + 1 starting
+	from 1.
+
+	c) This continues until there is only one kid left. The last Kid
+	standing is declared the Winner.
+	Write an algorithm which, given values of M and identifies
+	the position which would make her the winner.
+
+  	This code will work in Turbo C compiler. It will not work in gcc.
 */
 #include<stdio.h>
 #include<alloc.h>
 
 struct node
 {
-  int ele;
+	int ele;
 	struct node *next;
 };
 
