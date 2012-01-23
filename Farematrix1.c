@@ -22,8 +22,12 @@
 	console to show the pattern. This is a valid pattern and can be
 	achieved using PUSH - POP
 
+*/
 
-	This code will work in Turbo C compiler. It will not work in gcc.
+/*
+	NOTE:
+	This code will can successfully compiled with Turbo C compiler.
+	But it require minor changes to compile it with gcc.
 */
 #include<stdio.h>
 
