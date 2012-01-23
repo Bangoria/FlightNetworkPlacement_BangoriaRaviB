@@ -12,8 +12,12 @@
 	standing is declared the Winner.
 	Write an algorithm which, given values of M and identifies
 	the position which would make her the winner.
+*/
 
-  	This code will work in Turbo C compiler. It will not work in gcc.
+/*
+	NOTE:
+	This code can successfully compiled with Turbo C compiler.
+	But it require minor changes to compile it with gcc.
 */
 #include<stdio.h>
 #include<alloc.h>
