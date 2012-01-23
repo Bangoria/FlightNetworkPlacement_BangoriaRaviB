@@ -26,7 +26,7 @@
 
 /*
 	NOTE:
-	This code will can successfully compiled with Turbo C compiler.
+	This code can successfully compiled with Turbo C compiler.
 	But it require minor changes to compile it with gcc.
 */
 #include<stdio.h>
